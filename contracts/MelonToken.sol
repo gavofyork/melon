@@ -81,7 +81,25 @@ contract MelonToken is ERC20, SafeMath {
         _
     }
 
-    // METHODS
+/*  
+    address constant breakoutContract;
+    modifier when_sender_is_breakout { if (msg.sender == breakoutContract) _ }
+    
+    function breakOut(uint _value) {
+        if (balance[msg.sender] >= _value) {
+            balance[msg.sender] -= _value;
+	    breakoutContract.breakOut(msg.sender, _value);
+	}
+    }
+    
+    function breakBack(uint _value) when_sender_is_breakout {
+        balance[msg.sender] += _value;
+    }
+    
+    function kill() { self.suicide() }
+*/
+
+// METHODS
 
     /// Pre: ALL fields, except { founder, signer, startBlock, endBlock } IS_VALID
     /// Post: `founder` IS_VALID, `signer` ID_VALID, `startBlock` IS_VALID, `end_block` IS_VALID.  
